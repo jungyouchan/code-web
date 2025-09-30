@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비밀번호 실시간 해싱 실험</title>
+<link rel="stylesheet" href="/index.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs/dist/bcrypt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <div class="section">
+    <h1>비밀번호 해시 실험 🔐</h1>
+    <p>QR로 접속하여 비밀번호를 입력하면 실시간으로 처리 시간과 해시 결과를 확인할 수 있습니다.</p>
+    <form id="hashForm">
+      <input type="text" id="username" placeholder="아이디 (옵션)">
+      <input type="password" id="password" placeholder="비밀번호 입력" required>
+      <label for="algo">알고리즘 선택</label>
+      <select id="algo">
+        <option value="bcrypt">bcrypt</option>
+        <option value="sha256">SHA-256</option>
+      </select>
+      <label for="cost">bcrypt cost (Work Factor)</label>
+      <input type="number" id="cost" value="10" min="4" max="16">
+      <button type="submit">해시 실행</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>실시간 결과</h2>
+    <canvas id="hashChart" width="800" height="400"></canvas>
+    <div id="resultBox"></div>
+  </div>
+
+<script src="/main.js"></script>
+</body>
+</html>
