@@ -1,12 +1,12 @@
 @media (max-width: 767px) { /*스마트폰*/
   .underSpan {
-    margin-top: 1.9% !important;
+    margin-top: 2.2% !important;
   }
   .btn__text {
 	width: 4.38em !important;
   height: 1.5em !important;
   margin-top: -0.09em !important;
-  margin-left: -0.36em !important;
+  margin-left: -0.66em !important;
 }
 }
 
